@@ -31,8 +31,10 @@ public class Main {
         //System.out.println("Oliot:");
         for (Player player : players) {
             if(player.getNationality().equals("FIN")) {
-                System.out.println(player + " team " + player.getTeam()
-                + " goals " + player.getGoals() + " assists " + player.getAssists());
+                int sum = Integer.parseInt(player.getGoals()) + Integer.parseInt(player.getAssists());
+                System.out.printf("%-5s %-5s %-5s + %5s = %5s%n", player, player.getTeam(), player.getGoals(), player.getAssists(), sum);
+                //System.out.println(player + "    " + player.getTeam()
+                //+ " goals " + player.getGoals() + " assists " + player.getAssists());
             }
         }   
     }
