@@ -24,7 +24,7 @@ public abstract class Komento {
     public abstract void suorita();
 
     public void peru() {
-        int laskunTulos = sovellus.tulos();
+        int laskunTulos = sovellus.edellinen();
         syotekentta.setText("");
         tuloskentta.setText("" + laskunTulos);   
        
