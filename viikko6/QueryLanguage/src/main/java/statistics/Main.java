@@ -68,5 +68,33 @@ public class Main {
             System.out.println(player);
         }
 
+        System.out.println("");
+
+        Statistics stats2 = new Statistics(new PlayerReaderImpl("https://nhlstatisticsforohtu.herokuapp.com/players.txt"));
+
+        QueryBuilder query = new QueryBuilder();
+        Matcher b = query.build();
+
+        for (Player player : stats.matches(b)) {
+            System.out.println( player );
+        }
+
+        System.out.println("");
+
+        Matcher c = query.playsIn("NYR").build();
+
+        for (Player player : stats.matches(c)) {
+            System.out.println( player );
+        }
+
+        System.out.println("");
+
+        Matcher d = query.playsIn("NYR")
+                .hasAtLeast(5, "goals")
+                .hasFewerThan(10, "goals").build();
+
+        for (Player player : stats.matches(d)) {
+            System.out.println( player );
+        }
     }
 }
